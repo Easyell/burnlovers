@@ -15,3 +15,5 @@ webpack-dev-server --hot --inline --port 7301
 访问:
 
 localhost:port/index/index
+
+[texture从这里取](https://github.com/Easyell/burnlovers-texture)
