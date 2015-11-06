@@ -11,8 +11,7 @@ module.exports = {
     extensions: ['', '.js']
   },
   entry: {
-    homeIndex: path.resolve(__dirname, './public/js/home/index/z-main.js'),
-    listIndex: path.resolve(__dirname, './public/js/home/list/z-main.js')
+    homeIndex: path.resolve(__dirname, './public/js/main.js'),
   },
   output: {
     path: path.resolve(__dirname, './public/js/dist/'),

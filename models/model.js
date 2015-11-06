@@ -4,7 +4,7 @@
 
   MongoClient = require('mongodb').MongoClient;
 
-  url = 'mongodb://localhost:27017/sails';
+  url = 'mongodb://localhost:27017/dbName';
 
   connectedDb = null;
 
