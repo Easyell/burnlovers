@@ -11,7 +11,7 @@ module.exports = {
     extensions: ['', '.js']
   },
   entry: {
-    homeIndex: path.resolve(__dirname, './public/js/main.js'),
+    index: path.resolve(__dirname, './public/js/main.js'),
   },
   output: {
     path: path.resolve(__dirname, './public/js/dist/'),
