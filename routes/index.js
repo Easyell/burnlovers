@@ -9,10 +9,6 @@ var express = require('express');
 
 var router = express.Router();
 
-var apiDirName = './api';
-
-var apiDir = path.resolve(__dirname, apiDirName);
-
 var controllerDirName = './controller';
 
 var controllerDir = path.resolve(__dirname, controllerDirName);
@@ -41,7 +37,7 @@ var loadAllRoutes = function (dir) {
   });
 };
 
-[apiDir, controllerDir].forEach(loadAllRoutes);
+[controllerDir].forEach(loadAllRoutes);
 
 module.exports = router;
 
