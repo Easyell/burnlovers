@@ -2,6 +2,7 @@
  * Created by zyg on 15/11/6.
  */
 var hello = require('./example/hello');
+var sprite = require('./sprites/sprite')
 //var fire = require('./example/fires');
 var torchLoad = require('./example/torch');
 
@@ -44,11 +45,14 @@ l(function (com) {
     stage.addChild(hand)
     stage.addChild(fff)
     stage.addChild(lovers)
+    lovers.direction = sprite.makeIdentity([-2, 0])
+    lovers.speed = 2
 
     animate();
     function animate() {
         // render the stage container
         renderer.render(stage);
+        lovers.move(0.1)
 
         requestAnimationFrame(animate);
     }
