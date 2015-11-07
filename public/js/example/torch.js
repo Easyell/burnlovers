@@ -5,6 +5,20 @@ var isLoaded = false;
 
 var waitingFnStack = [];
 
+var waiting = function (config, fn) {
+    var key = ['config', 'fn'];
+
+    if (fn) {
+        var waiting = {};
+        waiting[key[0]] = config;
+        waiting[key[1]] = fn;
+
+        waitingFnStack.push(waiting)
+    }
+
+    return key;
+};
+
 var frameBuild = function (config) {
 
     var frames = [];
@@ -26,18 +40,14 @@ var whenAssetsLoaded = function (config, assesLoadedEnd) {
     return function () {
         isLoaded = true;
 
-
-        waitingFnStack.push({
-            config: config,
-            callback: assesLoadedEnd
-        });
+        var key = waiting(config, assesLoadedEnd);
 
         waitingFnStack.forEach(function (fn) {
-            if (fn.callback) {
-                var fire = frameBuild(fn.config);
-                fn.callback(fire);
-            }
+            var fire = frameBuild(fn[key[0]]);
+            fn.callback(key[1]);
         });
+
+        waitingFnStack = [];
     }
 };
 
@@ -52,10 +62,7 @@ module.exports = function (config, cb) {
     return function (config, fn) {
 
         if (!isLoaded) {
-            waitingFnStack.push({
-                config: config,
-                callback: fn
-            })
+            waiting(config, fn);
         } else {
             whenAssetsLoaded(config, fn)();
         }

@@ -12,7 +12,9 @@ document.body.appendChild(renderer.view);
 
 var stage = new PIXI.Container();
 
-var torch = torchLoad();
+var torch = torchLoad({},function(){
+    console.log('文件加载完');
+});
 
 torch({},function(fire){
 
