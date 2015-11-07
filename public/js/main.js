@@ -31,10 +31,9 @@ l(function (com) {
 
     fire.play();
 
-    var lovers = require('./sprites/lovers')
-    lovers.direction = spriteTools.makeIdentity([-2, 0])
-    lovers.speed = 2
 
+    var lovers = require('./sprites/lovers')()
+    lovers.direction = spriteTools.makeIdentity([0, 0])
     var close = require('./sprites/close');
     close.interactive = true;
     close.on('touchstart', function () {
@@ -47,7 +46,6 @@ l(function (com) {
     stage.addChild(hand)
     stage.addChild(fff)
     stage.addChild(lovers);
-
     animate();
     function animate() {
         // render the stage container

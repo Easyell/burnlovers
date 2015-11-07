@@ -6,7 +6,7 @@ var sprite = require('./sprite');
 var torch = sprite.getMc({
     maxFrame: 4,
     preFix: 'fire',
-    'position.set': [300,520],
+    'position.set': [225,520],
     'anchor.set': [1,1],
     'animationSpeed': 0.5,
     'scale.x': 0.3,
