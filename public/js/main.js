@@ -6,7 +6,7 @@ var spriteTools = require('./sprites/spriteTools');
 //var fire = require('./example/fires');
 var torchLoad = require('./example/torch');
 
-var renderer = new PIXI.WebGLRenderer(screen.width, screen.height, {
+var renderer = new PIXI.WebGLRenderer(320, 568, {
         transparent:true
     }
 );
@@ -28,9 +28,9 @@ ready(function (com) {
 
     fff.play();
 
-    var fire = require('./sprites/torch');
+    var torch = require('./sprites/torch');
 
-    fire.play();
+    torch.play();
 
 
     var lovers = require('./sprites/lovers')()
@@ -41,8 +41,14 @@ ready(function (com) {
         close.scale.x -= 0.1;
     });
 
+    stage.interactive = true
+    stage.on('touchstart', function(){
+        hand.gotoAndPlay(0)
+        torch.rf = 2
+    })
+
     stage.addChild(close);
-    stage.addChild(fire);
+    stage.addChild(torch);
     stage.addChild(hand)
     stage.addChild(fff)
     stage.addChild(lovers);

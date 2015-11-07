@@ -37,7 +37,7 @@ module.exports = {
         }
 
         var mc = new PIXI.extras.MovieClip(frames);
-
+        mc.maxFrame = config.maxFrame
         return setConfig(mc,config);
     },
     getIm:function(config){

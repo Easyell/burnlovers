@@ -3,3 +3,8 @@ body{
     -webkit-background-size: cover;
     background-size: cover;
 }
+
+canvas {
+    width: 100%;
+    height: 100%;
+}
