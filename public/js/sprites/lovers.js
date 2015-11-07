@@ -13,6 +13,10 @@ lovers.speed = 0
 lovers.move = function(dt) {
     lovers.x = lovers.x + lovers.direction[0] * lovers.speed * dt
     lovers.y = lovers.y + lovers.direction[1] * lovers.speed * dt
-}
+};
+
+lovers.render = function(){
+  this.move(0.1);
+};
 
 module.exports = lovers;
