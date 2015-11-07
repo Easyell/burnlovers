@@ -1,0 +1,16 @@
+/**
+ * Created by zyg on 15/11/7.
+ */
+var sprite = require('./sprite');
+
+var fff = sprite.getMc({
+    maxFrame: 2,
+    preFix: 'fff',
+    'position.set': [200, 580],
+    'anchor.set': [1,1],
+    'animationSpeed': 0.05,
+    'scale.x': 0.5,
+    'scale.y': 0.5
+});
+
+module.exports = fff;
