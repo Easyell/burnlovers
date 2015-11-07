@@ -62,20 +62,56 @@ ready(function (com) {
     stage.addChild(torch);
     stage.addChild(hand)
     stage.addChild(fff)
-    generateLovers(stage)
+    generateLovers(stage, 230)
     render(stage);
 });
 
-var generateLovers = function(stage) {
-    var lovers = require('./sprites/lovers')( function () {
-        lovers.speed = 0
+var generateLovers = function(stage, x) {
+    var lovers = require('./sprites/lovers')(x ,function () {
+        stage.removeChild(lovers)
+        lovers.destroy()
     })
     stage.addChild(lovers);
 }
 
+var timer = 0
+
+var randomLovers = {
+    0: function(stage) {
+        generateLovers(stage, 30)
+    },
+    1: function(stage) {
+        generateLovers(stage, 230)
+    },
+    2: function(stage) {
+        generateLovers(stage, 430)
+    },
+    3: function(stage) {
+        generateLovers(stage, 30)
+        generateLovers(stage, 430)
+    },
+    4: function(stage) {
+        generateLovers(stage, 30)
+        generateLovers(stage, 430)
+    },
+    5: function(stage) {
+        generateLovers(stage, 230)
+        generateLovers(stage, 430)
+    },
+    6: function(stage) {
+        generateLovers(stage, 30)
+        generateLovers(stage, 230)
+        generateLovers(stage, 430)
+    }
+}
+
 var render = function(stage){
     function animate() {
-
+        if(timer % 120 == 0) {
+            var r = parseInt(Math.random() * 7)
+            randomLovers[r](stage)
+        }
+        timer ++
         stage.children.forEach((function(child){
             if(child.render){
                 child.render();

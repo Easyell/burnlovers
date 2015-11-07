@@ -8,10 +8,10 @@ var R = require('../resource')
 //    'scale.y': 1
 //})
 
-var loverBuilder = function(cb) {
+var loverBuilder = function(x ,cb) {
     var lovers = sprite.getIm({
         img: R.lovers,
-        'position.set': [280,10],
+        'position.set': [x,10],
         'scale.x': 1,
         'scale.y': 1
     })
