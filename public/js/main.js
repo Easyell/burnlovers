@@ -22,13 +22,13 @@ l(function (com) {
     var hand = sprite.getMc({
         maxFrame: 8,
         preFix:'hand',
-        'position.set': [500, 100],
-        'anchor.set': [0.5, 1],
+        'position.set': [320, 568],
+        'anchor.set': [1, 1],
         'animationSpeed': 0.2,
         'scale.x': 0.3,
         'scale.y': 0.3
     });
-    hand.play()
+    hand.play();
 
     var fire = sprite.getMc({
         maxFrame: 4,
