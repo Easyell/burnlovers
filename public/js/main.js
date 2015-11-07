@@ -30,19 +30,14 @@ l(function (com) {
 
 
     var fire2 = sprite.getIm({
-        img: R.torch,
+        img: R.ca,
         'position.x':160,
         'position.y':300,
-        'scale.x':0.1,
-        'scale.y':0.1
     });
 
 
     stage.addChild(fire2);
     stage.addChild(fire);
-
-
-
 
 
     animate();
