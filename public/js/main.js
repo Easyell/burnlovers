@@ -22,13 +22,24 @@ l(function (com) {
     var hand = sprite.getMc({
         maxFrame: 8,
         preFix:'hand',
-        'position.set': [320, 568],
+        'position.set': [200, 200],
         'anchor.set': [1, 1],
         'animationSpeed': 0.2,
         'scale.x': 0.3,
         'scale.y': 0.3
     });
     hand.play();
+
+    var fff = sprite.getMc({
+        maxFrame: 2,
+        preFix: 'fff',
+        'position.set': [200, 200],
+        'anchor.set': 0.5,
+        'animationSpeed': 0.1,
+        'scale.x': 0.3,
+        'scale.y': 0.3
+    })
+    fff.play()
 
     var fire = sprite.getMc({
         maxFrame: 4,
@@ -60,7 +71,7 @@ l(function (com) {
     stage.addChild(fire2);
     stage.addChild(fire);
     stage.addChild(hand)
-
+    stage.addChild(fff)
 
     animate();
     function animate() {
