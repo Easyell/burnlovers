@@ -35,8 +35,7 @@ l(function (com) {
 
     var fire2 = sprite.getIm({
         img: R.ca,
-        'position.x': 280,
-        'position.y': 10,
+        'position.set': [280,10],
         'scale.x': 0.15,
         'scale.y': 0.15
     });
