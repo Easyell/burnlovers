@@ -7,7 +7,8 @@ var Fire = {};
 Fire.createSelf = function (cb) {
     PIXI.loader.add('/assets/fires/fires.json').load(function(){
         onAssertsLoad(cb)
-    })
+    });
+
 };
 
 function onAssertsLoad(cb) {
@@ -19,6 +20,7 @@ function onAssertsLoad(cb) {
         Fire = new PIXI.extras.MovieClip(frames)
         Fire.position.set(300)
         Fire.anchor.set(0.5);
+        Fire.loop = false;
         Fire.animationSpeed = 0.5;
 
         cb(Fire);
