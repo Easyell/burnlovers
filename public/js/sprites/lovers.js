@@ -19,9 +19,10 @@ var loverBuilder = function() {
     lovers.speed = 5
 
     lovers.move = function(dt) {
-        lovers.x = lovers.x + lovers.direction[0] * lovers.speed * dt
-        lovers.y = lovers.y + lovers.direction[1] * lovers.speed * dt
-    }
+
+        this.x = this.x + this.direction[0] * this.speed * dt
+        this.y = this.y + this.direction[1] * this.speed * dt
+    };
 
     lovers.render = function(){
         this.move(0.1);
