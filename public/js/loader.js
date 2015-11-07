@@ -11,8 +11,9 @@ module.exports = function(cb){
     for(var k in r){
         loader.add(k,r[k]);
     }
-
+    loader.on('progress',function(){
+        console.log.apply(console,arguments);
+    });
     loader.once('complete',cb);
-
     loader.load();
 };
