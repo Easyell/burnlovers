@@ -14,7 +14,7 @@ var frameBuild = function (config) {
     }
 
     var Fire = new PIXI.extras.MovieClip(frames);
-    Fire.position.set(300);
+    Fire.position.set(160);
     Fire.anchor.set(0.5);
     Fire.animationSpeed = 0.5;
 
