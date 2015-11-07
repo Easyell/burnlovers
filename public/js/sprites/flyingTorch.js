@@ -18,10 +18,11 @@ var flyingTorch = sprite.getIm({
 
 flyingTorch.fly = function(){
 
+
 };
 
 flyingTorch.render = function(){
-
+    this.fly();
 };
 
 module.exports = flyingTorch;

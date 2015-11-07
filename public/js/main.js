@@ -52,7 +52,6 @@ ready(function (com) {
        }
     });
 
-
     var bg = sprite.getIm({
         img:'/assets/background/background_street2.png',
         'position.set':[0,0],

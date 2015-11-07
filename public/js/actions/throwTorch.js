@@ -14,10 +14,11 @@ stage.on('touchstart', function (e) {
     //before
     defaultConfig.before.forEach(function(fn){fn()});
 
-    console.log(e);
-
     flyingTorch.x = e.data.global.x;
     flyingTorch.y = e.data.global.y;
+
+    flyingTorch.throwX = flyingTorch.x;
+    flyingTorch.throwY = flyingTorch.y;
 
     stage.addChild(flyingTorch);
 
