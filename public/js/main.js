@@ -29,12 +29,8 @@ l(function (com) {
     var fire = require('./sprites/torch');
 
     fire.play();
-    var lovers = sprite.getIm({
-         img: R.lovers,
-        'position.set': [280,10],
-        'scale.x': 1,
-        'scale.y': 1
-    })
+
+    var lovers = require('./sprites/lovers')
 
     var close = require('./sprites/close');
     close.interactive = true;
