@@ -6,7 +6,7 @@ var sprite = require('./sprite');
 var hand = sprite.getMc({
     maxFrame: 3,
     preFix:'hand',
-    'position.set': [130, 568],
+    'position.set': [130, 1004],
     'anchor.set': [0, 1],
     'animationSpeed': 0.3,
     'loop':false,
