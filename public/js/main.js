@@ -16,9 +16,10 @@ var stage = new PIXI.Container();
 
 var R = require('./resource');
 
-var l = require('./loader');
+var ready = require('./loader');
 
-l(function (com) {
+ready(function (com) {
+
     var hand = require('./sprites/hand');
 
     hand.play();
@@ -40,19 +41,29 @@ l(function (com) {
         close.scale.x -= 0.1;
     });
 
-
     stage.addChild(close);
     stage.addChild(fire);
     stage.addChild(hand)
     stage.addChild(fff)
     stage.addChild(lovers);
-    animate();
+    render(stage);
+});
+
+var render = function(){
     function animate() {
         // render the stage container
         renderer.render(stage);
-        lovers.move(0.1)
+
+        stage.children.forEach((function(child){
+            if(child.render){
+                child.render();
+            }
+        }));
+
 
         requestAnimationFrame(animate);
     }
+    animate();
+};
 
-});
+
