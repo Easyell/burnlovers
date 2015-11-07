@@ -13,26 +13,18 @@ var stage = new PIXI.Container();
 
 
 var l = require('./loader');
+l(function () {
 
-l(function(){
+    var fire = torchLoad();
 
-    var torch = torchLoad({},function(){
-        console.log('文件加载完');
-    });
+    fire.play();
 
-    torch({},function(fire){
+    fire.scale.x = 0.3;
+    fire.scale.y = 0.3;
 
-        console.log(fire);
+    stage.addChild(fire);
 
-        fire.play();
-
-        fire.scale.x = 0.3;
-        fire.scale.y = 0.3;
-
-        stage.addChild(fire);
-
-        animate();
-    });
+    animate();
 
 
     function animate() {
@@ -43,7 +35,6 @@ l(function(){
     }
 
 })
-
 
 
 //fire.createSelf(function(fire) {

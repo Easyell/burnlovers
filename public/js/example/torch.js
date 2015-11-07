@@ -1,28 +1,9 @@
 /**
  * Created by zyg on 15/11/7.
  */
-var isLoaded = true;
-
-var waitingFnStack = [];
-
-var waiting = function (config, fn) {
-    var key = ['config', 'fn'];
-
-    if (fn) {
-        var waiting = {};
-        waiting[key[0]] = config;
-        waiting[key[1]] = fn;
-
-        waitingFnStack.push(waiting)
-    }
-
-    return key;
-};
-
 var frameBuild = function (config) {
 
     var frames = [];
-
 
     for (var i = 0; i < 4; i++) {
         frames.push(PIXI.Texture.fromFrame('fire' + (i + 1) + '.png'))
@@ -36,36 +17,7 @@ var frameBuild = function (config) {
     return Fire;
 };
 
-var whenAssetsLoaded = function (config, assesLoadedEnd) {
+module.exports = function (config) {
 
-    return function () {
-        isLoaded = true;
-
-        var key = waiting(config, assesLoadedEnd);
-
-        waitingFnStack.forEach(function (fn) {
-            var fire = frameBuild(fn[key[0]]);
-            fn[key[1]](fire);
-        });
-
-        waitingFnStack = [];
-    }
-};
-
-module.exports = function (config,cb) {
-
-    if (!isLoaded) {
-        //PIXI.loader.add('/assets/fires/fires.json').load(whenAssetsLoaded(config));
-    } else {
-        whenAssetsLoaded(config, cb)();
-    }
-
-    return function (config, fn) {
-
-        if (!isLoaded) {
-            waiting(config, fn);
-        } else {
-            whenAssetsLoaded(config, fn)();
-        }
-    }
+    return frameBuild(config)
 };
