@@ -9,7 +9,7 @@ var renderer = new PIXI.WebGLRenderer(screen.width, screen.height);
 document.body.appendChild(renderer.view);
 
 var stage = new PIXI.Container();
-fire.createSelf(function() {
+fire.createSelf(function(fire) {
     fire.play();
     stage.addChild(fire)
 });
