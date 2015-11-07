@@ -27,6 +27,30 @@
     "fire2.png": {
       "frame": {
         "x": 2,
+        "y": 1306,
+        "w": 265,
+        "h": 650
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 18,
+        "y": 0,
+        "w": 265,
+        "h": 650
+      },
+      "sourceSize": {
+        "w": 300,
+        "h": 650
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "fire3.png": {
+      "frame": {
+        "x": 2,
         "y": 2,
         "w": 278,
         "h": 650
@@ -48,7 +72,31 @@
         "y": 0.5
       }
     },
-    "fire3.png": {
+    "fire4.png": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 278,
+        "h": 650
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 11,
+        "y": 0,
+        "w": 278,
+        "h": 650
+      },
+      "sourceSize": {
+        "w": 300,
+        "h": 650
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "fire5.png": {
       "frame": {
         "x": 2,
         "y": 654,
@@ -72,7 +120,54 @@
         "y": 0.5
       }
     },
-    "fire4.png": {
+    "fire6.png": {
+      "frame": {
+        "x": 2,
+        "y": 654,
+        "w": 275,
+        "h": 650
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 12,
+        "y": 0,
+        "w": 275,
+        "h": 650
+      },
+      "sourceSize": {
+        "w": 300,
+        "h": 650
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },
+    "fire7.png": {
+      "frame": {
+        "x": 2,
+        "y": 2,
+        "w": 278,
+        "h": 650
+      },
+      "rotated": false,
+      "trimmed": true,
+      "spriteSourceSize": {
+        "x": 11,
+        "y": 0,
+        "w": 278,
+        "h": 650
+      },
+      "sourceSize": {
+        "w": 300,
+        "h": 650
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      }
+    },"fire8.png": {
       "frame": {
         "x": 2,
         "y": 2,
