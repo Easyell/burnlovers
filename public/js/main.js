@@ -32,6 +32,8 @@ l(function (com) {
     fire.play();
 
     var lovers = require('./sprites/lovers')
+    lovers.direction = sprite.makeIdentity([-2, 0])
+    lovers.speed = 2
 
     var close = require('./sprites/close');
     close.interactive = true;
@@ -44,9 +46,7 @@ l(function (com) {
     stage.addChild(fire);
     stage.addChild(hand)
     stage.addChild(fff)
-    stage.addChild(lovers)
-    lovers.direction = sprite.makeIdentity([-2, 0])
-    lovers.speed = 2
+    stage.addChild(lovers);
 
     animate();
     function animate() {
