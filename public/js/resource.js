@@ -6,5 +6,6 @@ module.exports = {
   torchPng:'/assets/fires/fires.png',
   hands: '/assets/hands/hands.json',
   ca:'/assets/ca.png',
-  fff: '/assets/fff/fff.json'
+  fff: '/assets/fff/fff.json',
+  lovers: '/assets/lovers.png'
 };
