@@ -7,7 +7,7 @@ var makeIdentity = function(a) {
     }
     var b = Math.pow((Math.pow(a[0], 2) + Math.pow(a[1], 2)), 0.5);
     return [a[0] / b , a[1] / b]
-}
+};
 
 
 module.exports = {

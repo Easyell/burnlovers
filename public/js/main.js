@@ -1,10 +1,8 @@
 /**
  * Created by zyg on 15/11/6.
  */
-var hello = require('./example/hello');
-var spriteTools = require('./sprites/spriteTools');
 //var fire = require('./example/fires');
-var torchLoad = require('./example/torch');
+var spriteTools = require('./sprites/spriteTools');
 
 var renderer = new PIXI.WebGLRenderer(screen.width, screen.height, {
         transparent:true
@@ -12,11 +10,13 @@ var renderer = new PIXI.WebGLRenderer(screen.width, screen.height, {
 );
 document.body.appendChild(renderer.view);
 
-var stage = new PIXI.Container();
+var stage = require('./stage');
 
 var R = require('./resource');
 
 var ready = require('./loader');
+
+var throwTorch = require('./actions/throwTorch');
 
 ready(function (com) {
 
@@ -41,6 +41,12 @@ ready(function (com) {
         close.scale.x -= 0.1;
     });
 
+    throwTorch({
+       before:function(){
+           console.log('beforeTorch');
+       }
+    });
+
     stage.addChild(close);
     stage.addChild(fire);
     stage.addChild(hand)
@@ -51,8 +57,6 @@ ready(function (com) {
 
 var render = function(){
     function animate() {
-        // render the stage container
-        renderer.render(stage);
 
         stage.children.forEach((function(child){
             if(child.render){
@@ -60,6 +64,8 @@ var render = function(){
             }
         }));
 
+        // render the stage container
+        renderer.render(stage);
 
         requestAnimationFrame(animate);
     }

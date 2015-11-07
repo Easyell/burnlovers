@@ -3,7 +3,7 @@
  */
 module.exports = {
   torch:'/assets/fires/fires.json',
-  torchPng:'/assets/fires/fires.png',
+  flyingTorch:'/assets/fires/flying_fire.png',
   hands: '/assets/hands/hands.json',
   ca:'/assets/ca.png',
   fff: '/assets/fff/fff.json',
