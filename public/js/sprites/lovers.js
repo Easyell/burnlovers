@@ -9,8 +9,8 @@ var lovers = sprite.getIm({
 lovers.direction = [0, 0]
 lovers.speed = 0
 lovers.move = function(dt) {
-    lovers.x = lovers.direction[0] * lovers.speed * dt
-    lovers.y = lovers.direction[1] * lovers.speed * dt
+    lovers.x = lovers.x + lovers.direction[0] * lovers.speed * dt
+    lovers.y = lovers.y + lovers.direction[1] * lovers.speed * dt
 }
 
 module.exports = lovers;
