@@ -10,15 +10,14 @@ var defaultConfig = {
     progress: []
 };
 
-document.body.addEventListener('touchstart', function (e) {
+stage.on('touchstart', function (e) {
     //before
     defaultConfig.before.forEach(function(fn){fn()});
 
-    var touch = e.touches[0];
-    console.log(touch.pageX, touch.pageY);
+    console.log(e);
 
-    flyingTorch.x = touch.pageX;
-    flyingTorch.y = touch.pageY;
+    flyingTorch.x = e.data.global.x;
+    flyingTorch.y = e.data.global.y;
 
     stage.addChild(flyingTorch);
 

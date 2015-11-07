@@ -2,6 +2,7 @@
  * Created by zyg on 15/11/6.
  */
 //var fire = require('./example/fires');
+var sprite = require('./sprites/sprite');
 var spriteTools = require('./sprites/spriteTools');
 
 var renderer = new PIXI.WebGLRenderer(640, 1004, {
@@ -43,7 +44,6 @@ ready(function (com) {
     });
     stage.interactive = true
 
-
     throwTorch({
        before:function(){
            console.log('beforeTorch');
@@ -52,6 +52,15 @@ ready(function (com) {
        }
     });
 
+
+    var bg = sprite.getIm({
+        img:'/assets/background/background_street2.png',
+        'position.set':[0,0],
+        'width':640,
+        'height':1004
+    });
+
+    stage.addChild(bg);
     stage.addChild(close);
     stage.addChild(torch);
     stage.addChild(hand)
