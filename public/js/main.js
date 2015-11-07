@@ -25,6 +25,7 @@ l(function (com) {
         'position.set': [200, 200],
         'anchor.set': [1, 1],
         'animationSpeed': 0.2,
+        'loop':false,
         'scale.x': 0.3,
         'scale.y': 0.3
     });
@@ -44,8 +45,8 @@ l(function (com) {
     var fire = sprite.getMc({
         maxFrame: 4,
         preFix: 'fire',
-        'position.set': 160,
-        'anchor.set': 0.5,
+        'position.set': [300,520],
+        'anchor.set': [1,1],
         'animationSpeed': 0.5,
         'scale.x': 0.3,
         'scale.y': 0.3

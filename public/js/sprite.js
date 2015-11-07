@@ -23,8 +23,6 @@ var setConfig = function(object,config){
     return object;
 };
 
-
-
 module.exports = {
     getMc:function(config){
         var maxFrame = config.maxFrame;
