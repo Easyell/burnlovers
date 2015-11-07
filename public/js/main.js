@@ -2,7 +2,7 @@
  * Created by zyg on 15/11/6.
  */
 var hello = require('./example/hello');
-var sprite = require('./sprites/sprite')
+var spriteTools = require('./sprites/spriteTools');
 //var fire = require('./example/fires');
 var torchLoad = require('./example/torch');
 
@@ -32,7 +32,7 @@ l(function (com) {
     fire.play();
 
     var lovers = require('./sprites/lovers')
-    lovers.direction = sprite.makeIdentity([-2, 0])
+    lovers.direction = spriteTools.makeIdentity([-2, 0])
     lovers.speed = 2
 
     var close = require('./sprites/close');
