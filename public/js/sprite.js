@@ -38,7 +38,6 @@ module.exports = {
             frames.push(PIXI.Texture.fromFrame(preFix + (i + 1) + '.png'))
         }
 
-
         var mc = new PIXI.extras.MovieClip(frames);
 
         return setConfig(mc,config);

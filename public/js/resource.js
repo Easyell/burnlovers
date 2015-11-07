@@ -4,5 +4,6 @@
 module.exports = {
   torch:'/assets/fires/fires.json',
   torchPng:'/assets/fires/fires.png',
-  hand: '/assets/hands/hands.json'
+  hands: '/assets/hands/hands.json',
+  ca:'/assets/ca.png',
 };
