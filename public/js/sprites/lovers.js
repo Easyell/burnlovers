@@ -19,9 +19,10 @@ var loverBuilder = function(cb) {
     lovers.speed = 10
 
     lovers.move = function(dt) {
-        lovers.x = lovers.x + lovers.direction[0] * lovers.speed * dt
-        lovers.y = lovers.y + lovers.direction[1] * lovers.speed * dt
-    }
+
+        this.x = this.x + this.direction[0] * this.speed * dt
+        this.y = this.y + this.direction[1] * this.speed * dt
+    };
 
     lovers.checkout = function() {
         if(lovers.y > (1004 - 122)) {

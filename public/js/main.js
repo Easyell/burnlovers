@@ -40,19 +40,19 @@ ready(function (com) {
     close.on('touchstart', function () {
         close.scale.x -= 0.1;
     });
-    stage.interactive = true
+
+    stage.interactive = true;
 
     throwTorch({
        before:function(){
            console.log('beforeTorch');
-           hand.gotoAndPlay(0)
+           hand.gotoAndPlay(0);
            torch.rf = 2
        }
     });
 
-
     var bg = sprite.getIm({
-        img:'/assets/background/background_street2.png',
+        img: R.s1,
         'position.set':[0,0],
         'width':640,
         'height':1004

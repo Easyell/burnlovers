@@ -16,12 +16,17 @@ var flyingTorch = sprite.getIm({
     'anchor.set':[0.5,0.5]
 });
 
-flyingTorch.fly = function(){
+flyingTorch.direction = [0,0];
+flyingTorch.speed = 2;
 
+flyingTorch.fly = function(dt){
+
+    this.x = this.x + this.direction[0] * this.speed * dt
+    this.y = this.y + this.direction[1] * this.speed * dt
 };
 
 flyingTorch.render = function(){
-
+    this.fly(2);
 };
 
 module.exports = flyingTorch;
