@@ -9,24 +9,31 @@ var flyingTrace = function(x){
 
 };
 
-var flyingTorch = sprite.getIm({
-    img: R.flyingTorch,
-    'scale.x':0.15,
-    'scale.y':0.15,
-    'anchor.set':[0.5,0.5]
-});
+var setConfig = function(flyingTorch){
 
-flyingTorch.direction = [0,0];
-flyingTorch.speed = 2;
+    flyingTorch.direction = [0,0];
+    flyingTorch.speed = 2;
 
-flyingTorch.fly = function(dt){
+    flyingTorch.fly = function(dt){
 
-    this.x = this.x + this.direction[0] * this.speed * dt
-    this.y = this.y + this.direction[1] * this.speed * dt
+        this.x = this.x + this.direction[0] * this.speed * dt
+        this.y = this.y + this.direction[1] * this.speed * dt
+    };
+
+    flyingTorch.render = function(){
+        this.fly(2);
+    };
+
+    return flyingTorch;
 };
 
-flyingTorch.render = function(){
-    this.fly(2);
-};
+module.exports = function(){
+    var flyingTorch = sprite.getIm({
+        img: R.flyingTorch,
+        'scale.x':0.15,
+        'scale.y':0.15,
+        'anchor.set':[0.5,0.5]
+    });
 
-module.exports = flyingTorch;
+    return setConfig(flyingTorch);
+};
