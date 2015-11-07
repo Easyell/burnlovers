@@ -2,7 +2,7 @@
  * Created by zyg on 15/11/6.
  */
 var hello = require('./example/hello');
-
+var sprite = require('./sprite');
 //var fire = require('./example/fires');
 var torchLoad = require('./example/torch');
 
@@ -15,7 +15,13 @@ var stage = new PIXI.Container();
 var l = require('./loader');
 l(function () {
 
-    var fire = torchLoad();
+    var fire = sprite.getMc({
+        maxFrame:4,
+        preFix:'fire',
+        'position.set':160,
+        'anchor.set':0.5,
+        'animationSpeed':0.5
+    });
 
     fire.play();
 
