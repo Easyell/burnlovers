@@ -6,6 +6,7 @@ var lovers = sprite.getIm({
     'scale.x': 1,
     'scale.y': 1
 })
+
 lovers.direction = [0, 0]
 lovers.speed = 0
 lovers.move = function(dt) {

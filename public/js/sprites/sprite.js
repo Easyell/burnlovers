@@ -2,6 +2,12 @@
  * Created by zyg on 15/11/7.
  */
 
+var makeIdentity = function(a) {
+    var b = Math.pow((Math.pow(a[0], 2) + Math.pow(a[1], 2)), 0.5);
+    return [a[0] / b , a[1] / b]
+}
+
+
 var setValue = function(obj,key,value){
     if(key.length === 1){
         var k0 = key[0];
@@ -24,6 +30,7 @@ var setConfig = function(object,config){
 };
 
 module.exports = {
+    makeIdentity: makeIdentity,
     getMc:function(config){
         var maxFrame = config.maxFrame;
         var preFix = config.preFix;
