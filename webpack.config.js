@@ -10,6 +10,10 @@ module.exports = {
   resolve: {
     extensions: ['', '.js']
   },
+  externals:{
+    'pixi':'PIXI'
+  }
+  ,
   entry: {
     index: path.resolve(__dirname, './public/js/main.js'),
   },

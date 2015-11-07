@@ -2,8 +2,6 @@
  * Created by guoshencheng on 15/11/7.
  */
 
-var PIXI = require('../bower_components/pixi.js/bin/pixi.js')
-
 var Fire = new Object()
 
 Fire.createSelf = function(cb) {
