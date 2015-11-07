@@ -9,33 +9,42 @@ var torchLoad = require('./example/torch');
 var renderer = new PIXI.WebGLRenderer(screen.width, screen.height);
 document.body.appendChild(renderer.view);
 
-
 var stage = new PIXI.Container();
 
-var torch = torchLoad({},function(){
-    console.log('文件加载完');
-});
 
-torch({},function(fire){
+var l = require('./loader');
 
-    console.log(fire);
+l(function(){
 
-    fire.play();
+    var torch = torchLoad({},function(){
+        console.log('文件加载完');
+    });
 
-    fire.scale.x = 0.3;
-    fire.scale.y = 0.3;
+    torch({},function(fire){
 
-    stage.addChild(fire);
+        console.log(fire);
 
-    animate();
-});
+        fire.play();
 
-function animate() {
-    // render the stage container
-    renderer.render(stage);
+        fire.scale.x = 0.3;
+        fire.scale.y = 0.3;
 
-    requestAnimationFrame(animate);
-}
+        stage.addChild(fire);
+
+        animate();
+    });
+
+
+    function animate() {
+        // render the stage container
+        renderer.render(stage);
+
+        requestAnimationFrame(animate);
+    }
+
+})
+
+
 
 //fire.createSelf(function(fire) {
 //    fire2 = fire;

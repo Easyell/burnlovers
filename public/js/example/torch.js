@@ -1,7 +1,7 @@
 /**
  * Created by zyg on 15/11/7.
  */
-var isLoaded = false;
+var isLoaded = true;
 
 var waitingFnStack = [];
 
@@ -22,6 +22,7 @@ var waiting = function (config, fn) {
 var frameBuild = function (config) {
 
     var frames = [];
+
 
     for (var i = 0; i < 4; i++) {
         frames.push(PIXI.Texture.fromFrame('fire' + (i + 1) + '.png'))
@@ -44,17 +45,17 @@ var whenAssetsLoaded = function (config, assesLoadedEnd) {
 
         waitingFnStack.forEach(function (fn) {
             var fire = frameBuild(fn[key[0]]);
-            fn.callback(key[1]);
+            fn[key[1]](fire);
         });
 
         waitingFnStack = [];
     }
 };
 
-module.exports = function (config, cb) {
+module.exports = function (config,cb) {
 
     if (!isLoaded) {
-        PIXI.loader.add('/assets/fires/fires.json').load(whenAssetsLoaded(config, cb));
+        //PIXI.loader.add('/assets/fires/fires.json').load(whenAssetsLoaded(config));
     } else {
         whenAssetsLoaded(config, cb)();
     }
