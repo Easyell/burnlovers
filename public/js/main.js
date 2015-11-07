@@ -22,7 +22,7 @@ l(function (com) {
     var hand = sprite.getMc({
         maxFrame: 8,
         preFix:'hand',
-        'position.set': [500, 0],
+        'position.set': [500, 100],
         'anchor.set': [0.5, 1],
         'animationSpeed': 0.2,
         'scale.x': 0.3,
