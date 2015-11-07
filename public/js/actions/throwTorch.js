@@ -24,13 +24,10 @@ stage.on('touchstart', function (e) {
     flyingTorch.x = 160;
     flyingTorch.y = 870;
 
-    //flyingTorch.throwX = flyingTorch.x;
-    //flyingTorch.throwY = flyingTorch.y;
-
     flyingTorch.direction = spriteTools.makeIdentity([parseInt(x-160),parseInt(y-870)]);
 
-    console.log(+x,+y);
-    console.log(flyingTorch.direction);
+    //console.log(+x,+y);
+    //console.log(flyingTorch.direction);
 
     stage.addChild(flyingTorch);
 
