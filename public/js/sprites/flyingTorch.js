@@ -21,7 +21,12 @@ var setConfig = function(flyingTorch){
     };
 
     flyingTorch.render = function(){
-        this.fly(2);
+
+        if(this.x < 0 || this.x > 640 || this.y < 0){
+            this.parent.removeChild(this);
+        }else{
+            this.fly(2);
+        }
     };
 
     return flyingTorch;
