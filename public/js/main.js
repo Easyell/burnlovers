@@ -3,36 +3,50 @@
  */
 var hello = require('./example/hello');
 
-var fire = require('./example/fires');
+//var fire = require('./example/fires');
+var torchLoad = require('./example/torch');
 
 var renderer = new PIXI.WebGLRenderer(screen.width, screen.height);
 document.body.appendChild(renderer.view);
 
-var fire2 = null;
 
 var stage = new PIXI.Container();
-fire.createSelf(function(fire) {
-    fire2 = fire;
-    fire.scale.x = 0.3
-    fire.scale.y = 0.3
-    stage.addChild(fire)
+
+var torch = torchLoad();
+
+torch({},function(fire){
+
+    console.log(fire);
+
+    fire.play();
+
+    fire.scale.x = 0.3;
+    fire.scale.y = 0.3;
+
+    stage.addChild(fire);
 
     animate();
 });
 
 function animate() {
-
     // render the stage container
-    if(fire2){
-        fire2.play();
-    }
     renderer.render(stage);
 
     requestAnimationFrame(animate);
 }
 
-setInterval(function(){
-    if(fire2){
-        fire2.play();
-    }
-},500);
+//fire.createSelf(function(fire) {
+//    fire2 = fire;
+//    fire.scale.x = 0.3
+//    fire.scale.y = 0.3
+//    stage.addChild(fire)
+//
+//    animate();
+//});
+//
+//
+//setInterval(function(){
+//    if(fire2){
+//        fire2.play();
+//    }
+//},500);
