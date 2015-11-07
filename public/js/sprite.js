@@ -6,7 +6,7 @@ var setValue = function(obj,key,value){
     if(key.length === 1){
         var k0 = key[0];
         if(typeof obj[k0] === 'function'){
-            obj[k0](value);
+            obj[k0].apply(obj,[].concat(value));
         }else{
             obj[k0] = value;
         }
