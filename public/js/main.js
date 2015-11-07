@@ -11,28 +11,41 @@ document.body.appendChild(renderer.view);
 
 var stage = new PIXI.Container();
 
+var R = require('./resource');
 
 var l = require('./loader');
-l(function () {
+l(function (com) {
 
     var fire = sprite.getMc({
         maxFrame:4,
         preFix:'fire',
         'position.set':160,
         'anchor.set':0.5,
-        'animationSpeed':0.5
+        'animationSpeed':0.5,
+        'scale.x':0.3,
+        'scale.y':0.3
     });
 
     fire.play();
 
-    fire.scale.x = 0.3;
-    fire.scale.y = 0.3;
 
+    var fire2 = sprite.getIm({
+        img: R.torch,
+        'position.x':160,
+        'position.y':300,
+        'scale.x':0.1,
+        'scale.y':0.1
+    });
+
+
+    stage.addChild(fire2);
     stage.addChild(fire);
 
+
+
+
+
     animate();
-
-
     function animate() {
         // render the stage container
         renderer.render(stage);

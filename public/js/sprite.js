@@ -44,6 +44,13 @@ module.exports = {
         return setConfig(mc,config);
     },
     getIm:function(config){
+        var img = config.img;
 
+        delete config.img;
+
+        var texture = PIXI.Texture.fromImage(img);
+        var sp = new PIXI.Sprite(texture);
+
+        return setConfig(sp,config);
     }
 };
