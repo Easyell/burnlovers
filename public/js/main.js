@@ -4,10 +4,11 @@
 //var fire = require('./example/fires');
 var spriteTools = require('./sprites/spriteTools');
 
-var renderer = new PIXI.WebGLRenderer(320, 568, {
+var renderer = new PIXI.WebGLRenderer(640, 1004, {
         transparent:true
     }
 );
+
 document.body.appendChild(renderer.view);
 
 var stage = require('./stage');
@@ -56,6 +57,7 @@ ready(function (com) {
     stage.addChild(hand)
     stage.addChild(fff)
     stage.addChild(lovers);
+
     render(stage);
 });
 
