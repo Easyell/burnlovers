@@ -12,6 +12,8 @@ var renderer = new PIXI.WebGLRenderer(640, 1004, {
 
 document.body.appendChild(renderer.view);
 
+var loversArr = []
+
 var stage = require('./stage');
 
 var R = require('./resource');
@@ -33,10 +35,6 @@ ready(function (com) {
     var torch = require('./sprites/torch');
 
     torch.play();
-
-
-    var lovers = require('./sprites/lovers')()
-    lovers.direction = spriteTools.makeIdentity([0, 0])
     var close = require('./sprites/close');
     close.interactive = true;
     close.on('touchstart', function () {
@@ -59,18 +57,23 @@ ready(function (com) {
         'width':640,
         'height':1004
     });
-
     stage.addChild(bg);
     stage.addChild(close);
     stage.addChild(torch);
     stage.addChild(hand)
     stage.addChild(fff)
-    stage.addChild(lovers);
-
+    generateLovers(stage)
     render(stage);
 });
 
-var render = function(){
+var generateLovers = function(stage) {
+    var lovers = require('./sprites/lovers')( function () {
+        lovers.speed = 0
+    })
+    stage.addChild(lovers);
+}
+
+var render = function(stage){
     function animate() {
 
         stage.children.forEach((function(child){
