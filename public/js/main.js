@@ -19,6 +19,16 @@ var R = require('./resource');
 var l = require('./loader');
 
 l(function (com) {
+    var hand = sprite.getMc({
+        maxFrame: 8,
+        preFix:'hand',
+        'position.set': [500, 0],
+        'anchor.set': [0.5, 1],
+        'animationSpeed': 0.2,
+        'scale.x': 0.3,
+        'scale.y': 0.3
+    });
+    hand.play()
 
     var fire = sprite.getMc({
         maxFrame: 4,
@@ -49,6 +59,7 @@ l(function (com) {
 
     stage.addChild(fire2);
     stage.addChild(fire);
+    stage.addChild(hand)
 
 
     animate();
