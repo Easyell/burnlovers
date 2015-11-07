@@ -14,6 +14,7 @@ var stage = new PIXI.Container();
 var R = require('./resource');
 
 var l = require('./loader');
+
 l(function (com) {
 
     var fire = sprite.getMc({
@@ -33,6 +34,12 @@ l(function (com) {
         img: R.ca,
         'position.x':160,
         'position.y':300,
+    });
+
+
+    fire2.interactive = true;
+    fire2.on('touchstart',function(){
+        fire2.scale.x -= 0.1;
     });
 
 
