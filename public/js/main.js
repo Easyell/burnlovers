@@ -6,7 +6,7 @@ var hello = require('./example/hello');
 var torchLoad = require('./example/torch');
 
 var renderer = new PIXI.WebGLRenderer(screen.width, screen.height, {
-        backgroundColor: 0x474747
+        transparent:true
     }
 );
 document.body.appendChild(renderer.view);

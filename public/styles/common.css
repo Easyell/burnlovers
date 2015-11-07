@@ -1,0 +1,5 @@
+body{
+    background-image: url(/assets/background/background_street2.png);
+    -webkit-background-size: cover;
+    background-size: cover;
+}
