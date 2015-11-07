@@ -16,6 +16,10 @@ var flyingTorch = sprite.getIm({
     'anchor.set':[0.5,0.5]
 });
 
+flyingTorch.fly = function(){
+
+};
+
 flyingTorch.render = function(){
 
 };

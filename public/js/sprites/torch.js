@@ -16,6 +16,7 @@ var torch = sprite.getMc({
 torch.rf = 0
 
 torch.tf = function() {
+
     if(this.rf <= 0) {
         this.x = 135, this.y = 520
         this.rotation = 0
@@ -28,10 +29,10 @@ torch.tf = function() {
         }
         this.rf -= 0.3
     }
-}
+};
 
 torch.render = function() {
     torch.tf()
-}
+};
 
 module.exports = torch;

@@ -42,13 +42,13 @@ ready(function (com) {
         close.scale.x -= 0.1;
     });
     stage.interactive = true
-    stage.on('touchstart', function(){
-        hand.gotoAndPlay(0)
-        torch.rf = 2
-    })
+
+
     throwTorch({
        before:function(){
            console.log('beforeTorch');
+           hand.gotoAndPlay(0)
+           torch.rf = 2
        }
     });
 
