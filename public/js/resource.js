@@ -11,5 +11,6 @@ module.exports = {
   lovers: '/assets/lovers.png',
   loversframe: '/assets/loversframe.json',
   s1:'/assets/background/s1.jpg',
-  background: '/assets/background/background.png'
+  background: '/assets/background/background.png',
+  drool:'/assets/drool/drool.json'
 };
