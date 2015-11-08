@@ -14,14 +14,14 @@ var setGravity = function (flyingTorch) {
     flyingTorch.vup =  - flyingTorch.g * times / 2
 };
 
-var setConfig = function(flyingTorch, tarx, tary){
+var setConfig = function(flyingTorch){
     //flyingTorch.vup = 5
     flyingTorch.x = 160;
     flyingTorch.y = 870;
-    flyingTorch.direction = spriteTools.makeIdentity([parseInt(tarx-160),parseInt(tary-870)]);
+    flyingTorch.direction = spriteTools.makeIdentity([parseInt(flyingTorch.tarx-160),parseInt(flyingTorch.tary-870)]);
     flyingTorch.speed = 2;
 
-    setGravity(flyingTorch,tarx,tary);
+    setGravity(flyingTorch);
 
     flyingTorch.fly = function(dt){
         this.scale.x -= (0.001 * dt * Math.abs(this.direction[1]))
@@ -55,5 +55,5 @@ module.exports = function(config){
         'anchor.set':[0.5,0.5]
     },config));
 
-    return setConfig(flyingTorch, config.tarx,config.tary);
+    return setConfig(flyingTorch);
 };

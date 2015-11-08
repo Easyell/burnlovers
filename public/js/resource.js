@@ -4,6 +4,7 @@
 module.exports = {
   torch:'/assets/fires/fires.json',
   flyingTorch:'/assets/fires/flying_fire.png',
+  landFire: '/assets/fires/land_fire.png',
   hands: '/assets/hands/hands.json',
   ca:'/assets/ca.png',
   fff: '/assets/fff/fff.json',

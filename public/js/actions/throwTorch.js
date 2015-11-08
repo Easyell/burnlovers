@@ -4,6 +4,7 @@
 var flyingTorchBuild = require('../sprites/flyingTorch');
 
 var stage = require('../stage');
+var landFireBuilder = require('../sprites/landFire.js')
 
 var defaultConfig = {
   before: [],
@@ -43,6 +44,12 @@ stage.on('touchstart', function (e) {
     arrived: function (torch) {
       console.log('目标x:' + torch.tarx + ' 实际到达x：' + torch.x + '目标y:' + torch.y + ' 实际到达y：' + torch.tary);
       checkShoot(torch.x, torch.y)
+      var landFire = landFireBuilder()
+      landFire.x = torch.x
+      landFire.y = torch.y + torch.height / 3
+      landFire.scale.x = torch.scale.x + 0.1
+      landFire.scale.y = torch.scale.y + 0.1
+      stage.addChild(landFire)
     }
   });
 
