@@ -29,7 +29,8 @@ var setConfig = function(flyingTorch, tarx, tary, cb){
     setGravity(flyingTorch, tarx, tary)
 
     flyingTorch.fly = function(dt){
-
+        this.scale.x -= 0.001 * dt
+        this.scale.y -= 0.001 * dt
         this.x = this.x + this.direction[0] * this.speed * dt
         this.y = this.y + this.direction[1] * this.speed * dt
         this.y = this.y + this.vup * dt
@@ -53,8 +54,8 @@ var setConfig = function(flyingTorch, tarx, tary, cb){
 module.exports = function(tarx, tary, cb){
     var flyingTorch = sprite.getIm({
         img: R.flyingTorch,
-        'scale.x':0.15,
-        'scale.y':0.15,
+        'scale.x':0.3,
+        'scale.y':0.3,
         'anchor.set':[0.5,0.5]
     });
 
