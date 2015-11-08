@@ -22,7 +22,7 @@ var droolBuild = function(config){
     }));
 
     drool.speed = 4;
-    drool.direction  =spriteTools.makeIdentity([200-config.x,910-config.y]);
+    drool.direction  =spriteTools.makeIdentity([85-config.x,940-config.y]);
 
     //停留帧数
     drool.keeyTimes = 60;
@@ -34,7 +34,7 @@ var droolBuild = function(config){
     };
 
     drool.hit = function(){
-        if(this.y >= 970){
+        if(this.y >= 940){
             return true;
         }
     }
