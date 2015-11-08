@@ -12,7 +12,6 @@ var renderer = new PIXI.WebGLRenderer(640, 1004, {
 
 document.body.appendChild(renderer.view);
 
-var loversArr = []
 
 var stage = require('./stage');
 
@@ -69,9 +68,13 @@ ready(function (com) {
 var generateLovers = function(stage, x) {
     var lovers = require('./sprites/lovers')(x ,function () {
         stage.removeChild(lovers)
+        stage.loversArr.splice(lovers.tag, 1)
         lovers.destroy()
+        //console.log('减少后：' + loversArr.length)
     })
+    lovers.tag = stage.loversArr.push(lovers) - 1
     stage.addChild(lovers);
+    //console.log('增加后：' + loversArr.length)
 }
 
 var timer = 0

@@ -9,7 +9,11 @@ var makeIdentity = function(a) {
     return [a[0] / b , a[1] / b]
 };
 
+var distance = function(x1, y1, x2, y2) {
+    return Math.pow((Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2)), 0.5);
+}
 
 module.exports = {
-    makeIdentity:makeIdentity
+    makeIdentity:makeIdentity,
+    distance: distance
 }

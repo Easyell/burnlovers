@@ -2,7 +2,6 @@
  * Created by zyg on 15/11/7.
  */
 var flyingTorchBuild = require('../sprites/flyingTorch');
-var spriteTools = require('../sprites/spriteTools');
 
 var stage = require('../stage');
 
@@ -19,13 +18,7 @@ stage.on('touchstart', function (e) {
     var x = e.data.global.x;
     var y = e.data.global.y;
 
-    var flyingTorch = flyingTorchBuild();
-
-    flyingTorch.x = 160;
-    flyingTorch.y = 870;
-    flyingTorch.tarx = x
-    flyingTorch.tary = y
-    flyingTorch.direction = spriteTools.makeIdentity([parseInt(x-160),parseInt(y-870)]);
+    var flyingTorch = flyingTorchBuild(x, y);
 
     //console.log(+x,+y);
     //console.log(flyingTorch.direction);
