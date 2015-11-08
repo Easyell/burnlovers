@@ -48,12 +48,14 @@ var setConfig = function(flyingTorch){
 };
 
 module.exports = function(config){
-    var flyingTorch = sprite.getIm(spriteTools.extend({
+    var flyingTorch = sprite.getMc(spriteTools.extend({
+        maxFrame: 4,
+        preFix:'rotate_fire',
+        'animationSpeed': 0.3,
         img: R.flyingTorch,
         'scale.x':0.3,
         'scale.y':0.3,
         'anchor.set':[0.5,0.5]
     },config));
-
     return setConfig(flyingTorch);
 };

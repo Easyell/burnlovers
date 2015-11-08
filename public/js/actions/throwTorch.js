@@ -53,6 +53,7 @@ stage.on('touchstart', function (e) {
       stage.addChild(landFire)
     }
   });
+  flyingTorch.play()
 
   //console.log(+x,+y);
   //console.log(flyingTorch.direction);

@@ -16,7 +16,7 @@ var loverBuilder = function(type ,cb) {
     })
 
     lovers.direction = spriteTool.makeIdentity(cf.direction)
-    lovers.speed = 10
+    lovers.speed = 6
 
     lovers.dscale = 0.5 * lovers.speed / 5000
 
