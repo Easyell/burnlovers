@@ -17,7 +17,7 @@ var setGravity = function (flyingTorch, tarx, tary) {
     flyingTorch.vup =  - flyingTorch.g * times / 2
 }
 
-var setConfig = function(flyingTorch, tarx, tary){
+var setConfig = function(flyingTorch, tarx, tary, cb){
     //flyingTorch.vup = 5
     flyingTorch.x = 160;
     flyingTorch.y = 870;
@@ -39,6 +39,7 @@ var setConfig = function(flyingTorch, tarx, tary){
         if(this.x < 0 || this.x > 640 ||
                 (this.direction[0] < 0 && (this.x < this.tarx)) ||
                 (this.direction[0] >= 0 && (this.x >= this.tarx))) {
+            cb(this)
             this.parent.removeChild(this)
         }else{
             this.fly(2);
@@ -48,7 +49,7 @@ var setConfig = function(flyingTorch, tarx, tary){
     return flyingTorch;
 };
 
-module.exports = function(tarx, tary){
+module.exports = function(tarx, tary, cb){
     var flyingTorch = sprite.getIm({
         img: R.flyingTorch,
         'scale.x':0.15,
@@ -56,5 +57,5 @@ module.exports = function(tarx, tary){
         'anchor.set':[0.5,0.5]
     });
 
-    return setConfig(flyingTorch, tarx, tary);
+    return setConfig(flyingTorch, tarx, tary, cb);
 };
