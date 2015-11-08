@@ -26,7 +26,10 @@ var loverBuilder = function(type ,cb) {
 
     lovers.checkout = function() {
         if(lovers.y > (1004 - 70)) {
-            cb()
+            var stage = this.parent;
+            stage.removeChild(lovers)
+            stage.loversArr.splice(stage.loversArr.indexOf(lovers), 1)
+            lovers.destroy()
         }
     }
 
