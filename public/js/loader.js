@@ -13,7 +13,7 @@ module.exports = function (cb) {
     }
 
     loader.on('progress', function (a, b) {
-        //console.log.apply(console, arguments);
+        console.log.apply(console, arguments);
     });
 
     loader.once('complete', cb);

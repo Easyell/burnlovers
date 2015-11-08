@@ -5,13 +5,16 @@ var config = require('../config')
 
 var loverBuilder = function(type ,cb) {
     var cf = config.lovers[type]
-    var lovers = sprite.getIm({
-        img: R.lovers,
+    var lovers = sprite.getMc({
+        maxFrame: 6,
+        preFix: 'lovers',
         'position.set': [cf.x, 480],
+        'animationSpeed': 0.2,
         'anchor.set': [0.5, 0.5],
         'scale.x': 0.5,
         'scale.y': 0.5
     })
+
     lovers.direction = spriteTool.makeIdentity(cf.direction)
     lovers.speed = 10
 
