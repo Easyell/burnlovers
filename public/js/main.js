@@ -42,7 +42,6 @@ ready(function (com) {
         close.scale.x -= 0.1;
     });
 
-    stage.interactive = true;
 
     throwTorch({
        before:function(){
@@ -64,6 +63,7 @@ ready(function (com) {
     stage.addChild(hand)
     stage.addChild(fff)
     stage.addChild(count)
+
     generateLovers(stage, 1);
 
     render(stage);
