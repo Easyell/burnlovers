@@ -23,7 +23,8 @@ stage.on('touchstart', function (e) {
 
     flyingTorch.x = 160;
     flyingTorch.y = 870;
-
+    flyingTorch.tarx = x
+    flyingTorch.tary = y
     flyingTorch.direction = spriteTools.makeIdentity([parseInt(x-160),parseInt(y-870)]);
 
     //console.log(+x,+y);
