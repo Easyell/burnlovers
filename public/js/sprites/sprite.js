@@ -32,8 +32,8 @@ module.exports = {
         delete config.maxFrame;
         delete config.preFix;
 
-        for(var i=0;i<maxFrame;i++){
-            frames.push(PIXI.Texture.fromFrame(preFix + (i + 1) + '.png'))
+        for(var i=1;i<=maxFrame;i++){
+            frames.push(PIXI.Texture.fromFrame(preFix + i + '.png'))
         }
 
         var mc = new PIXI.extras.MovieClip(frames);

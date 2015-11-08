@@ -29,7 +29,8 @@ var checkShoot = function (x, y) {
 
   stage.loversArr = loversArr;
 };
-
+//等于true，使之能够监听事件
+stage.interactive = true;
 stage.on('touchstart', function (e) {
   //before
   defaultConfig.before.forEach(function (fn) {

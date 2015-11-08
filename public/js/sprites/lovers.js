@@ -3,6 +3,8 @@ var spriteTool = require('./spriteTools')
 var R = require('../resource')
 var config = require('../config')
 
+var droolBuild = require('./drool');
+
 var loverBuilder = function(type ,cb) {
     var cf = config.lovers[type]
     var lovers = sprite.getMc({
@@ -28,6 +30,19 @@ var loverBuilder = function(type ,cb) {
     };
 
     lovers.checkout = function() {
+        if(!this.drooled && lovers.y > (1004 - 210)){
+            console.log('吐口水啦');
+
+            this.drooled = true;
+
+            var drool = droolBuild({
+                x:lovers.x,
+                y:lovers.y
+            });
+
+            this.parent.addChild(drool,2);
+        }
+
         if(lovers.y > (1004 - 70)) {
             var stage = this.parent;
             stage.removeChild(lovers)

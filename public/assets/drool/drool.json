@@ -1,0 +1,28 @@
+{"frames": {
+
+"drool1.png":
+{
+	"frame": {"x":209,"y":2,"w":154,"h":169},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":46,"y":32,"w":154,"h":169},
+	"sourceSize": {"w":250,"h":250}
+},
+"drool2.png":
+{
+	"frame": {"x":2,"y":2,"w":205,"h":210},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":23,"y":20,"w":205,"h":210},
+	"sourceSize": {"w":250,"h":250}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "drool.png",
+	"format": "RGBA8888",
+	"size": {"w":365,"h":214},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:cb7e96c49050070286583849962104de:061eaf6fa7b70d1c79d0f47669868869:d8538a66d50784fe7479a467bf782f90$"
+}
+}
