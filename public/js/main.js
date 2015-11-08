@@ -22,7 +22,9 @@ var ready = require('./loader');
 var throwTorch = require('./actions/throwTorch');
 
 ready(function (com) {
-
+    stage.burnCount = 0
+    stage.live = 5
+    var count = require('./sprites/count')()
     var hand = require('./sprites/hand');
 
     hand.play();
@@ -61,6 +63,7 @@ ready(function (com) {
     stage.addChild(torch);
     stage.addChild(hand)
     stage.addChild(fff)
+    stage.addChild(count)
     generateLovers(stage, 1);
 
     render(stage);

@@ -21,6 +21,7 @@ var checkShoot = function (x, y) {
     if (Math.abs(lovers.x - x) < 40 && Math.abs(lovers.y - y) < 40) {
       loversArr.splice(i, 1);
       stage.removeChild(lovers)
+      stage.burnCount ++
     } else {
       i++;
     }
