@@ -12,17 +12,18 @@ var defaultConfig = {
 };
 
 var checkShoot = function(x, y) {
-    for(var val in stage.loversArr) {
-        if(!isNaN(val)) {
-            var lovers = stage.loversArr[val]
-            console.log('lovers:', lovers)
-            if(Math.abs(lovers.x - x) < 40 && Math.abs(lovers.y - y)) {
-                stage.loversArr.splice(val, 1)
-                stage.removeChild(lovers)
-            }
+    var i = 0,
+      loversArr = stage.loversArr;
+    while(i<loversArr.length){
+        var lovers = loversArr[i];
+        if(Math.abs(lovers.x - x) < 40 && Math.abs(lovers.y - y)) {
+            loversArr.splice(i,1);
+            stage.removeChild(lovers)
+        }else{
+            i++;
         }
     }
-}
+};
 
 stage.on('touchstart', function (e) {
     //before
@@ -32,7 +33,7 @@ stage.on('touchstart', function (e) {
     var y = e.data.global.y;
 
     var flyingTorch = flyingTorchBuild(x, y, function(torch) {
-        console.log('目标x:' + torch.tarx + ' 实际到达x：' + torch.x +'目标y:'+ torch.y + ' 实际到达y：' + torch.tary)
+        console.log('目标x:' + torch.tarx + ' 实际到达x：' + torch.x +'目标y:'+ torch.y + ' 实际到达y：' + torch.tary);
         checkShoot(torch.x, torch.y)
     });
 

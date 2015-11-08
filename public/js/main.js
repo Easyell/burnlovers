@@ -61,7 +61,8 @@ ready(function (com) {
     stage.addChild(torch);
     stage.addChild(hand)
     stage.addChild(fff)
-    generateLovers(stage, 1)
+    generateLovers(stage, 1);
+
     render(stage);
 });
 

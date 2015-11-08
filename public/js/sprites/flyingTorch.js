@@ -13,9 +13,9 @@ var flyingTrace = function(x){
 var setGravity = function (flyingTorch, tarx, tary) {
     flyingTorch.g = 0.05
     var distance = spriteTools.distance(flyingTorch.x, flyingTorch.y, tarx, tary)
-    var times = parseInt(distance / flyingTorch.speed)
+    var times = parseInt(distance / flyingTorch.speed);
     flyingTorch.vup =  - flyingTorch.g * times / 2
-}
+};
 
 var setConfig = function(flyingTorch, tarx, tary, cb){
     //flyingTorch.vup = 5
@@ -25,6 +25,7 @@ var setConfig = function(flyingTorch, tarx, tary, cb){
     flyingTorch.tarx = tarx
     flyingTorch.tary = tary
     flyingTorch.speed = 2;
+
     setGravity(flyingTorch, tarx, tary)
 
     flyingTorch.fly = function(dt){
@@ -39,7 +40,7 @@ var setConfig = function(flyingTorch, tarx, tary, cb){
         if(this.x < 0 || this.x > 640 ||
                 (this.direction[0] < 0 && (this.x < this.tarx)) ||
                 (this.direction[0] >= 0 && (this.x >= this.tarx))) {
-            cb(this)
+            cb(this);
             this.parent.removeChild(this)
         }else{
             this.fly(2);
