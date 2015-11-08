@@ -69,11 +69,11 @@ ready(function (com) {
 var generateLovers = function(stage, x) {
     var lovers = require('./sprites/lovers')(x ,function () {
         stage.removeChild(lovers)
-        stage.loversArr.splice(lovers.tag, 1)
+        stage.loversArr.splice(stage.loversArr.indexOf(lovers), 1)
         lovers.destroy()
         //console.log('减少后：' + loversArr.length)
     })
-    lovers.tag = stage.loversArr.push(lovers) - 1
+    stage.loversArr.push(lovers)
     stage.addChild(lovers);
     //console.log('增加后：' + loversArr.length)
 }

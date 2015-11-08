@@ -18,7 +18,7 @@ var checkShoot = function(x, y) {
 
         while(i<loversArr.length){
             var lovers = loversArr[i];
-            if(Math.abs(lovers.x - x) < 40 && Math.abs(lovers.y - y)) {
+            if(Math.abs(lovers.x - x) < 40 && Math.abs(lovers.y - y) < 40) {
                 loversArr.splice(i,1);
                 stage.removeChild(lovers)
             }else{
