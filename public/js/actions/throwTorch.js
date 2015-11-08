@@ -13,16 +13,22 @@ var defaultConfig = {
 
 var checkShoot = function(x, y) {
     var i = 0,
-      loversArr = stage.loversArr;
-    while(i<loversArr.length){
-        var lovers = loversArr[i];
-        if(Math.abs(lovers.x - x) < 40 && Math.abs(lovers.y - y)) {
-            loversArr.splice(i,1);
-            stage.removeChild(lovers)
-        }else{
-            i++;
+      loversArr = stage.loversArr.slice();
+    try{
+
+        while(i<loversArr.length){
+            var lovers = loversArr[i];
+            if(Math.abs(lovers.x - x) < 40 && Math.abs(lovers.y - y)) {
+                loversArr.splice(i,1);
+                stage.removeChild(lovers)
+            }else{
+                i++;
+            }
         }
+    }catch(e){
+        console.error('e',e);
     }
+    stage.loversArr = loversArr;
 };
 
 stage.on('touchstart', function (e) {
