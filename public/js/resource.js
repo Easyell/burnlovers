@@ -8,5 +8,6 @@ module.exports = {
   ca:'/assets/ca.png',
   fff: '/assets/fff/fff.json',
   lovers: '/assets/lovers.png',
-  s1:'/assets/background/s1.jpg'
+  s1:'/assets/background/s1.jpg',
+  background: '/assets/background/background.png'
 };

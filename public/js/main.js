@@ -52,7 +52,7 @@ ready(function (com) {
     });
 
     var bg = sprite.getIm({
-        img: R.s1,
+        img: R.background,
         'position.set':[0,0],
         'width':640,
         'height':1004
