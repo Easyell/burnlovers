@@ -8,7 +8,7 @@ var loverBuilder = function(type ,cb) {
     var lovers = sprite.getIm({
         img: R.lovers,
         'position.set': [cf.x, 480],
-        'anchor.set': [0.5, 1],
+        'anchor.set': [0.5, 0.5],
         'scale.x': 0.5,
         'scale.y': 0.5
     })
