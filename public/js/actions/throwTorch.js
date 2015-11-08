@@ -6,63 +6,71 @@ var flyingTorchBuild = require('../sprites/flyingTorch');
 var stage = require('../stage');
 
 var defaultConfig = {
-    before: [],
-    after: [],
-    progress: []
+  before: [],
+  after: [],
+  progress: []
 };
 
-var checkShoot = function(x, y) {
-    var i = 0,
-      loversArr = stage.loversArr;
+var checkShoot = function (x, y) {
+  var i = 0,
+    loversArr = stage.loversArr;
 
-    while(i<loversArr.length){
-            var lovers = loversArr[i];
-            if(Math.abs(lovers.x - x) < 40 && Math.abs(lovers.y - y) < 40) {
-                loversArr.splice(i,1);
-                stage.removeChild(lovers)
-            }else{
-                i++;
-            }
+  while (i < loversArr.length) {
+    var lovers = loversArr[i];
+    if (Math.abs(lovers.x - x) < 40 && Math.abs(lovers.y - y) < 40) {
+      loversArr.splice(i, 1);
+      stage.removeChild(lovers)
+    } else {
+      i++;
     }
+  }
 
-    stage.loversArr = loversArr;
+  stage.loversArr = loversArr;
 };
 
 stage.on('touchstart', function (e) {
-    //before
-    defaultConfig.before.forEach(function(fn){fn()});
+  //before
+  defaultConfig.before.forEach(function (fn) {
+    fn()
+  });
 
-    var x = e.data.global.x;
-    var y = e.data.global.y;
+  var x = e.data.global.x;
+  var y = e.data.global.y;
 
-    var flyingTorch = flyingTorchBuild(x, y, function(torch) {
-        console.log('目标x:' + torch.tarx + ' 实际到达x：' + torch.x +'目标y:'+ torch.y + ' 实际到达y：' + torch.tary);
-        checkShoot(torch.x, torch.y)
-    });
+  var flyingTorch = flyingTorchBuild({
+    tarx: x,
+    tary: y,
+    arrived: function (torch) {
+      console.log('目标x:' + torch.tarx + ' 实际到达x：' + torch.x + '目标y:' + torch.y + ' 实际到达y：' + torch.tary);
+      checkShoot(torch.x, torch.y)
+    }
+  });
 
-    //console.log(+x,+y);
-    //console.log(flyingTorch.direction);
+  //console.log(+x,+y);
+  //console.log(flyingTorch.direction);
 
-    stage.addChild(flyingTorch);
+  stage.addChild(flyingTorch);
 
-    //after
-    defaultConfig.after.forEach(function(fn){fn()});
+  //after
+  defaultConfig.after.forEach(function (fn) {
+    fn()
+  });
 });
 
 module.exports = function (throwLifeCb) {
-    //记录插入的坐标
-    var indexes = {};
+  //记录插入的坐标
+  var indexes = {};
 
-    for(var period in defaultConfig){
-            var cb = throwLifeCb[period];
-            if (cb) {
-                indexes[period] = defaultConfig[period].push(cb) - 1;
-            }
+  for (var period in defaultConfig) {
+    var cb = throwLifeCb[period];
+    if (cb) {
+      indexes[period] = defaultConfig[period].push(cb) - 1;
     }
-    //remove
-    return function(){
-        for(var recordPeriod in indexes){
-            defaultConfig[recordPeriod].splice(indexes[recordPeriod],1);
-        }
+  }
+  //remove
+  return function () {
+    for (var recordPeriod in indexes) {
+      defaultConfig[recordPeriod].splice(indexes[recordPeriod], 1);
     }
+  }
 };
