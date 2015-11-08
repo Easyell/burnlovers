@@ -24,8 +24,8 @@ var setConfig = function(flyingTorch, tarx, tary){
     setGravity(flyingTorch,tarx,tary);
 
     flyingTorch.fly = function(dt){
-        this.scale.x -= 0.001 * dt
-        this.scale.y -= 0.001 * dt
+        this.scale.x -= (0.001 * dt * Math.abs(this.direction[1]))
+        this.scale.y -= (0.001 * dt * Math.abs(this.direction[1]))
         this.x = this.x + this.direction[0] * this.speed * dt
         this.y = this.y + this.direction[1] * this.speed * dt
         this.y = this.y + this.vup * dt
