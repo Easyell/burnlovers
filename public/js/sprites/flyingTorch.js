@@ -10,7 +10,7 @@ var setGravity = function (flyingTorch) {
     var distance = spriteTools.distance(flyingTorch.x, flyingTorch.y, flyingTorch.tarx, flyingTorch.tary)
     var times = parseInt(distance / flyingTorch.speed);
 
-    flyingTorch.g = 0.05
+    flyingTorch.g = 0.04
     flyingTorch.vup =  - flyingTorch.g * times / 2
 };
 
@@ -26,6 +26,7 @@ var setConfig = function(flyingTorch){
     flyingTorch.fly = function(dt){
         this.scale.x -= (0.001 * dt * Math.abs(this.direction[1]))
         this.scale.y -= (0.001 * dt * Math.abs(this.direction[1]))
+
         this.x = this.x + this.direction[0] * this.speed * dt
         this.y = this.y + this.direction[1] * this.speed * dt
         this.y = this.y + this.vup * dt
