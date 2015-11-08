@@ -1,5 +1,7 @@
 var sprite = require('./sprite');
+var spriteTool = require('./spriteTools')
 var R = require('../resource')
+var config = require('../config')
 
 //var lovers = sprite.getIm({
 //    img: R.lovers,
@@ -8,14 +10,15 @@ var R = require('../resource')
 //    'scale.y': 1
 //})
 
-var loverBuilder = function(x ,cb) {
+var loverBuilder = function(type ,cb) {
+    var cf = config.lovers[type]
     var lovers = sprite.getIm({
         img: R.lovers,
-        'position.set': [x,10],
-        'scale.x': 1,
-        'scale.y': 1
+        'position.set': [cf.x,400],
+        'scale.x': 0.5,
+        'scale.y': 0.5
     })
-    lovers.direction = [0, 1]
+    lovers.direction = spriteTool.makeIdentity(cf.direction)
     lovers.speed = 10
 
     lovers.move = function(dt) {

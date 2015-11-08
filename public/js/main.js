@@ -62,7 +62,7 @@ ready(function (com) {
     stage.addChild(torch);
     stage.addChild(hand)
     stage.addChild(fff)
-    generateLovers(stage, 230)
+    generateLovers(stage, 1)
     render(stage);
 });
 
@@ -78,30 +78,30 @@ var timer = 0
 
 var randomLovers = {
     0: function(stage) {
-        generateLovers(stage, 30)
+        generateLovers(stage, 0)
     },
     1: function(stage) {
-        generateLovers(stage, 230)
+        generateLovers(stage, 1)
     },
     2: function(stage) {
-        generateLovers(stage, 430)
+        generateLovers(stage, 2)
     },
     3: function(stage) {
-        generateLovers(stage, 30)
-        generateLovers(stage, 430)
+        generateLovers(stage, 0)
+        generateLovers(stage, 2)
     },
     4: function(stage) {
-        generateLovers(stage, 30)
-        generateLovers(stage, 430)
+        generateLovers(stage, 0)
+        generateLovers(stage, 1)
     },
     5: function(stage) {
-        generateLovers(stage, 230)
-        generateLovers(stage, 430)
+        generateLovers(stage, 1)
+        generateLovers(stage, 2)
     },
     6: function(stage) {
-        generateLovers(stage, 30)
-        generateLovers(stage, 230)
-        generateLovers(stage, 430)
+        generateLovers(stage, 0)
+        generateLovers(stage, 1)
+        generateLovers(stage, 2)
     }
 }
 
