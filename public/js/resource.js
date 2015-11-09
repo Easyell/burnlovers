@@ -8,9 +8,12 @@ module.exports = {
   hands: '/assets/hands/hands.json',
   ca:'/assets/ca.png',
   fff: '/assets/fff/fff.json',
+  fffStart: '/assets/fff/fff_start.json',
   lovers: '/assets/lovers.png',
   loversframe: '/assets/loversframe.json',
   s1:'/assets/background/s1.jpg',
   background: '/assets/background/background.png',
-  drool:'/assets/drool/drool.json'
+  startBackground:'/assets/background/start_background.png',
+  drool:'/assets/drool/drool.json',
+  startButton: '/assets/start_button.png'
 };

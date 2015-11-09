@@ -1,9 +1,8 @@
 /**
  * Created by zyg on 15/11/7.
  */
+var stage = require('../stage')
 var flyingTorchBuild = require('../sprites/flyingTorch');
-
-var stage = require('../stage');
 var landFireBuilder = require('../sprites/landFire.js')
 
 var defaultConfig = {
@@ -36,7 +35,6 @@ stage.on('touchstart', function (e) {
   defaultConfig.before.forEach(function (fn) {
     fn()
   });
-
   var x = e.data.global.x;
   var y = e.data.global.y;
 
