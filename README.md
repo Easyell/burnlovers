@@ -6,7 +6,13 @@ services 工具库相关
 
 启动:
 
-node bin/www
+ > node bin/www
+
+正式环境下启动:
+
+
+ > NODE_ENV=product node bin/www
+
 
 访问:
 

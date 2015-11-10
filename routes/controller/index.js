@@ -7,7 +7,8 @@ var config = require('../config');
 module.exports = {
   index:[policy('fromWX'),function(req,res){
     res.render('index',{
-      position:config.getR()
+      position:config.getR(),
+      env:process.env.NODE_ENV
     });
   }]
 };
