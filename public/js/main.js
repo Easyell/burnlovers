@@ -1,12 +1,21 @@
 /**
  * Created by zyg on 15/11/6.
  */
-
+var common = require('./common');
 var sprite = require('./sprites/sprite');
-var renderer = new PIXI.WebGLRenderer(640, 1004, {
-        transparent:true
-    }
-);
+var renderer;
+var r = common.isSupportWebGL();
+if(r){
+    renderer= new PIXI.WebGLRenderer(640, 1004, {
+          transparent:true
+      }
+    );
+}else{
+    renderer= new PIXI.CanvasRenderer(640, 1004, {
+          transparent:true
+      }
+    );
+}
 
 document.body.appendChild(renderer.view);
 var audio = document.getElementById('audio')
