@@ -37,6 +37,6 @@ var cdn1Resource = {
 var resourceMap = {
   local:localResource,
   cdn1:cdn1Resource
-}
+};
 
-module.exports = resourceMap[resourcePosition];
+module.exports = resourceMap[resourcePosition] || resourceMap['local'];
