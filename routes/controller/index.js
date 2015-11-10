@@ -1,8 +1,13 @@
 /**
  * Created by zyg on 15/11/6.
  */
+var policy = require('../policy');
+var config = require('../config');
+
 module.exports = {
-  index:function(req,res){
-    res.render('index');
-  }
+  index:[policy('fromWX'),function(req,res){
+    res.render('index',{
+      position:config.getR()
+    });
+  }]
 };

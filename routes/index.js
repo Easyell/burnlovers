@@ -19,20 +19,20 @@ var loadAllRoutes = function (dir) {
   fs.readdirSync(dir).filter(function (controllerName) {
     return jsFileRegExp.test(controllerName);
   }).forEach(function (controllerName) {
-    var controller, e, fn, route, routerName, _results;
+    var controller,fn, route, routerName;
     controllerName = controllerName.replace(/\.js$/, '');
     try {
       controller = require(path.resolve(__dirname, dir, controllerName));
-      _results = [];
       for (routerName in controller) {
         fn = controller[routerName];
         route = "/" + controllerName + "/" + routerName;
-        _results.push(router.get(route, fn));
+
+        [].concat(fn).forEach(function(f){
+          router.get(route, f);
+        });
       }
-      return _results;
     } catch (_error) {
-      e = _error;
-      return console.log(e);
+      return console.log(_error);
     }
   });
 };
