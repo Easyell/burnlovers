@@ -4,7 +4,7 @@
 var path = require('path');
 var qnUpload = require('gulp-qiniu');
 
-var src = path.resolve(__dirname,'../public/assets/*.png');
+var src = path.resolve(__dirname,'../public/assets/background/end_mask.png');
 
 var optionDir = path.resolve(__dirname,'../uploadDir/');
 module.exports = function(gulp){

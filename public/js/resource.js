@@ -33,7 +33,9 @@ var cdn1Resource = {
   startBackground:'http://7tszl1.com1.z0.glb.clouddn.com/Users/zyg/Documents/burnlovers/uploadDir/1511101612/background/start_background.png',
   drool:'http://7tszl1.com1.z0.glb.clouddn.com/Users/zyg/Documents/burnlovers/uploadDir/1511101612/drool/drool.json',
   startButton: 'http://7tszl1.com1.z0.glb.clouddn.com/Users/zyg/Documents/burnlovers/uploadDir/1511102127/start_button.png',
-  endProgress: 'http://7tszl1.com1.z0.glb.clouddn.com/Users/zyg/Documents/burnlovers/uploadDir/1511101612/endProgress/end_progress.json'
+  endProgress: 'http://7tszl1.com1.z0.glb.clouddn.com/Users/zyg/Documents/burnlovers/uploadDir/1511101612/endProgress/end_progress.json',
+  backButton: 'http://7tszl1.com1.z0.glb.clouddn.com/Users/zyg/Documents/burnlovers/uploadDir/1511102327/back_button.png',
+  endMask: 'http://7tszl1.com1.z0.glb.clouddn.com/Users/zyg/Documents/burnlovers/uploadDir/1511102331/end_mask.png',
 };
 
 var resourceMap = {
