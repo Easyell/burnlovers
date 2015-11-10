@@ -15,7 +15,9 @@ var localResource = {
   startBackground:'/assets/background/start_background.png',
   drool:'/assets/drool/drool.json',
   startButton: '/assets/start_button.png',
-  endProgress: '/assets/endProgress/end_progress.json'
+  endProgress: '/assets/endProgress/end_progress.json',
+  backButton: '/assets/back_button.png',
+  endMask: '/assets/background/end_mask.png'
 };
 
 var cdn1Resource = {

@@ -46,7 +46,7 @@ var droolBuild = function(config){
                 stage.progress ++
                 endProgress.gotoAndStop(stage.progress)
                 if(stage.progress == 10) {
-                    stage.gameOver()
+                    stage.showEndMask()
                 }
             }
             this.keeyTimes--;

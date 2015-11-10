@@ -48,12 +48,49 @@ stage.clear = function() {
     this.visible = false
 }
 
+function rate (count) {
+    if (count > 200 * 0.99) {
+        return 99 + '%'
+    } else {
+        return count / 400 + '%'
+    }
+}
+
+stage.showEndMask = function() {
+    stage.isEnd = true
+    stage.interactive = false
+    var mask = sprite.getIm({
+        img: R.endMask,
+        'position.set':[0,0],
+        'width':640,
+        'height':1004
+    });
+    var text = new PIXI.Text(rate(stage.burnCount),{font : '50px Arial', fill : 0x000000, align : 'center'});
+    text.x = 360
+    text.y = 410
+    var backButton = sprite.getIm({
+        img: R.backButton,
+        'anchor.set': [0.5, 0.5],
+        'position.set':[320,600]
+    });
+    backButton.interactive = true
+    backButton.on('touchstart', function(e) {
+        stage.gameOver()
+    })
+    stage.addChild(mask)
+    stage.addChild(backButton)
+    stage.addChild(text)
+}
+
 stage.init = function() {
+    stage.isEnd = false
+    stage.interactive = true
     stage.loversArr = []
     stage.timer = 0
     this.visible = true
     this.burnCount = 0
     this.progress = 0
+
     var count = require('./sprites/count')()
     var hand = require('./sprites/hand');
 
@@ -92,6 +129,9 @@ stage.init = function() {
 }
 
 stage.render = function() {
+    if(this.isEnd) {
+        return
+    }
     if(stage.timer % 120 == 0) {
         var r = parseInt(Math.random() * 7)
         randomLovers[r](stage)
