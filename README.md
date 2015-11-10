@@ -22,6 +22,12 @@ localhost:port/index/index
  
 －－－－－－－－－－－－－－－－－－－－－
 
+上传assets，手动调用 
+
+  >  gulp qn
+
+－－－－－－－－－－－－－－－－－－－－－
+
 更换资源位，手动调用
 
   > localhost:port/resource/change?position=标示符
