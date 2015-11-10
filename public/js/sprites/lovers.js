@@ -18,6 +18,8 @@ var loverBuilder = function(type ,cb) {
         'scale.y': 0.5
     })
 
+    lovers.shootDistance = 210 + 150 * Math.random()
+
     lovers.direction = spriteTool.makeIdentity(cf.direction)
     lovers.speed = 10
 
@@ -31,7 +33,7 @@ var loverBuilder = function(type ,cb) {
     };
 
     lovers.checkout = function() {
-        if(!this.drooled && lovers.y > (1004 - 210)){
+        if(!this.drooled && lovers.y > (1004 - lovers.shootDistance)){
             console.log('吐口水啦');
 
             this.drooled = true;
