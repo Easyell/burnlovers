@@ -7,7 +7,7 @@ var sprite = require('./sprite');
 var fffStart = sprite.getMc({
     maxFrame: 2,
     preFix: 'fff_start',
-    'position.set': [320, 1000],
+    'position.set': [320, 800],
     'anchor.set': [0.5,1],
     'animationSpeed': 0.05,
     'scale.x': 1,

@@ -24,7 +24,7 @@ stage.init = function(start) {
     torch.play();
     var startButton = sprite.getIm({
         img: R.startButton,
-        'position.set':[20,0]
+        'position.set':[20,700]
     });
     startButton.interactive = true;
     startButton.on('touchstart', function () {
