@@ -11,7 +11,7 @@ var localResource = {
   fffStart: '/assets/fff/fff_start.json',
   lovers: '/assets/lovers.png',
   loversframe: '/assets/loversframe.json',
-  background: '/assets/background/background.png',
+  background: '/assets/background/background.jpg',
   startBackground:'/assets/background/start_background.png',
   drool:'/assets/drool/drool.json',
   startButton: '/assets/start_button.png',
