@@ -67,11 +67,11 @@ stage.showEndMask = function() {
     });
     var text = new PIXI.Text(rate(stage.burnCount),{font : '50px Arial', fill : 0x000000, align : 'center'});
     text.x = 360
-    text.y = 410
+    text.y = 340
     var backButton = sprite.getIm({
         img: R.backButton,
         'anchor.set': [0.5, 0.5],
-        'position.set':[320,600]
+        'position.set':[320,550]
     });
     backButton.interactive = true
     backButton.on('touchstart', function(e) {
