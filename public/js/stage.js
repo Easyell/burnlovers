@@ -68,8 +68,7 @@ stage.init = function() {
     torch.play();
 
     var endProgress = require('./sprites/endProgress')
-
-
+    endProgress.gotoAndStop(stage.progress)
     var bg = sprite.getIm({
         img: R.background,
         'position.set':[0,0],
