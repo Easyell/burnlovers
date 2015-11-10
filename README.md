@@ -18,4 +18,12 @@ localhost:port/index/index
 
 图片压缩，谨慎调用，一个apiKey只能压500张图
 
- > gulp tinyPng
+  >  gulp tinyPng
+ 
+－－－－－－－－－－－－－－－－－－－－－
+
+更换资源位，手动调用
+
+  > localhost:port/resource/change?position=标示符
+
+ 
