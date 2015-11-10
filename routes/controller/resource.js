@@ -12,5 +12,10 @@ module.exports = {
     res.json({
       position:config.getR()
     });
+  },
+  count:function(req,res){
+    res.json({
+      count:config.count(true)
+    })
   }
 };
