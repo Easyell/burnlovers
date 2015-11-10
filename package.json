@@ -19,6 +19,7 @@
     "express-session": "^1.11.3",
     "gulp": "^3.9.0",
     "gulp-ejs": "^1.2.1",
+    "gulp-tinypng": "x.x.x",
     "mongodb": "^2.0.43",
     "morgan": "~1.5.3",
     "serve-favicon": "~2.2.1",

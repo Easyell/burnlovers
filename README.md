@@ -4,8 +4,6 @@ models 数据相关
 
 services 工具库相关
 
-gulp待补充
-
 启动:
 
 node bin/www
@@ -15,3 +13,9 @@ node bin/www
 localhost:port/index/index
 
 [texture从这里取](https://github.com/Easyell/burnlovers-texture)
+
+－－－－－－－－－－－－－－－－－－－－－
+
+图片压缩，谨慎调用，一个apiKey只能压500张图
+
+ > gulp tinyPng
