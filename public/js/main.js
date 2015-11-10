@@ -9,8 +9,8 @@ var renderer = new PIXI.WebGLRenderer(640, 1004, {
 );
 
 document.body.appendChild(renderer.view);
-
-
+var audio = document.getElementById('audio')
+audio.loop = true
 var stage = require('./stage');
 var startStage = require('./startStage')
 var mainStage = new PIXI.Container()
@@ -21,11 +21,13 @@ ready(function (com) {
         stage.clear()
         startStage.init()
         mainStage.addChild(startStage)
+        audio.pause()
     }
     startStage.start = function() {
         startStage.clear()
         stage.init()
         mainStage.addChild(stage)
+        audio.play()
     }
     startStage.init()
     mainStage.addChild(startStage)
