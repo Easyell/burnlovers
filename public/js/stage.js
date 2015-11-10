@@ -66,11 +66,6 @@ stage.init = function() {
     var torch = require('./sprites/torch');
 
     torch.play();
-    var close = require('./sprites/close');
-    close.interactive = true;
-    close.on('touchstart', function () {
-        close.scale.x -= 0.1;
-    });
 
     var endProgress = require('./sprites/endProgress')
 
@@ -90,7 +85,6 @@ stage.init = function() {
         }
     })
     this.addChild(bg);
-    this.addChild(close);
     this.addChild(endProgress)
     this.addChild(torch);
     this.addChild(hand)
