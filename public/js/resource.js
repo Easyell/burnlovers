@@ -1,7 +1,8 @@
 /**
  * Created by zyg on 15/11/7.
  */
-module.exports = {
+
+var localResource = {
   torch:'/assets/fires/fires.json',
   flyingTorch:'/assets/fires/flying_fire.png',
   landFire: '/assets/fires/land_fire.png',
@@ -16,3 +17,14 @@ module.exports = {
   startButton: '/assets/start_button.png',
   endProgress: '/assets/endProgress/end_progress.json'
 };
+
+var cdn1Resource = {
+
+};
+
+var resourceMap = {
+  local:localResource,
+  cdn1:cdn1Resource
+}
+
+module.exports = resourceMap[resourcePosition];
