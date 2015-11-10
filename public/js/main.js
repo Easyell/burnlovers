@@ -13,22 +13,23 @@ document.body.appendChild(renderer.view);
 
 var stage = require('./stage');
 var startStage = require('./startStage')
-
+var mainStage = new PIXI.Container()
 var ready = require('./loader');
 
 ready(function (com) {
     stage.gameOver = function() {
         stage.clear()
         startStage.init()
-        render(startStage)
+        mainStage.addChild(startStage)
     }
     startStage.start = function() {
         startStage.clear()
         stage.init()
-        render(stage)
+        mainStage.addChild(stage)
     }
     startStage.init()
-    render(startStage);
+    mainStage.addChild(startStage)
+    render(mainStage);
 });
 
 var render = function(stage){

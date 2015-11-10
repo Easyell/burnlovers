@@ -9,9 +9,12 @@ var stage = new PIXI.Container();
 
 stage.clear = function () {
     stage.removeChildren()
+    stage.parent.removeChild(stage)
+    this.visible = false
 }
 
 stage.init = function() {
+    this.visible = true
     var bg = sprite.getIm({
         img: R.startBackground,
         'position.set':[0,0],
@@ -37,7 +40,11 @@ stage.init = function() {
 }
 
 stage.render = function() {
-
+    stage.children.forEach((function(child){
+        if(child.render){
+            child.render();
+        }
+    }));
 }
 
 module.exports = stage

@@ -44,11 +44,14 @@ var randomLovers = {
 
 stage.clear = function() {
     stage.removeChildren()
+    stage.parent.removeChild(stage)
+    this.visible = false
 }
 
 stage.init = function() {
     stage.loversArr = []
     stage.timer = 0
+    this.visible = true
     this.burnCount = 0
     this.progress = 0
     var count = require('./sprites/count')()
@@ -101,6 +104,11 @@ stage.render = function() {
         randomLovers[r](stage)
     }
     stage.timer ++
+    stage.children.forEach((function(child){
+        if(child.render){
+            child.render();
+        }
+    }));
 }
 
 module.exports = stage;
