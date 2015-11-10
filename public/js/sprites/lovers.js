@@ -3,6 +3,7 @@ var spriteTool = require('./spriteTools')
 var R = require('../resource')
 var config = require('../config')
 
+
 var droolBuild = require('./drool');
 
 var loverBuilder = function(type ,cb) {
@@ -41,6 +42,7 @@ var loverBuilder = function(type ,cb) {
             });
 
             this.parent.addChild(drool,2);
+
         }
 
         if(lovers.y > (1004 - 70)) {

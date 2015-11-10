@@ -2,7 +2,9 @@
  * Created by zyg on 15/11/8.
  */
 var sprite = require('./sprite');
+var stage = require('../stage')
 var spriteTools = require('./spriteTools');
+var endProgress = require('./endProgress')
 
 var droolBuild = function(config){
     if(!config){
@@ -40,6 +42,13 @@ var droolBuild = function(config){
     }
     drool.hited = function(){
         if(this.keeyTimes > 0){
+            if(this.keeyTimes == 60) {
+                stage.progress ++
+                endProgress.gotoAndStop(stage.progress)
+                if(stage.progress == 10) {
+                    stage.gameOver()
+                }
+            }
             this.keeyTimes--;
             this.scale.x = 0.5;
             this.scale.y = 0.5;

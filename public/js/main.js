@@ -17,12 +17,17 @@ var startStage = require('./startStage')
 var ready = require('./loader');
 
 ready(function (com) {
-    stage.init()
-    startStage.init(function() {
+    stage.gameOver = function() {
+        stage.clear()
+        startStage.init()
+        render(startStage)
+    }
+    startStage.start = function() {
         startStage.clear()
         stage.init()
         render(stage)
-    })
+    }
+    startStage.init()
     render(startStage);
 });
 

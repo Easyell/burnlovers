@@ -50,7 +50,7 @@ stage.init = function() {
     stage.loversArr = []
     stage.timer = 0
     this.burnCount = 0
-    this.live = 5
+    this.progress = 0
     var count = require('./sprites/count')()
     var hand = require('./sprites/hand');
 
@@ -69,6 +69,9 @@ stage.init = function() {
         close.scale.x -= 0.1;
     });
 
+    var endProgress = require('./sprites/endProgress')
+
+
     var bg = sprite.getIm({
         img: R.background,
         'position.set':[0,0],
@@ -85,6 +88,7 @@ stage.init = function() {
     })
     this.addChild(bg);
     this.addChild(close);
+    this.addChild(endProgress)
     this.addChild(torch);
     this.addChild(hand)
     this.addChild(fff)

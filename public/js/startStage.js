@@ -11,7 +11,7 @@ stage.clear = function () {
     stage.removeChildren()
 }
 
-stage.init = function(start) {
+stage.init = function() {
     var bg = sprite.getIm({
         img: R.startBackground,
         'position.set':[0,0],
@@ -28,7 +28,7 @@ stage.init = function(start) {
     });
     startButton.interactive = true;
     startButton.on('touchstart', function () {
-        start()
+        stage.start()
     });
     this.addChild(bg)
     this.addChild(torch)

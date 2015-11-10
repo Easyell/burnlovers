@@ -15,5 +15,6 @@ module.exports = {
   background: '/assets/background/background.png',
   startBackground:'/assets/background/start_background.png',
   drool:'/assets/drool/drool.json',
-  startButton: '/assets/start_button.png'
+  startButton: '/assets/start_button.png',
+  endProgress: '/assets/endProgress/end_progress.json'
 };
