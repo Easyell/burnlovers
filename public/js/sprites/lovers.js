@@ -2,6 +2,7 @@ var sprite = require('./sprite');
 var spriteTool = require('./spriteTools')
 var R = require('../resource')
 var config = require('../config')
+var stage = require('../stage')
 
 
 var droolBuild = require('./drool');
@@ -21,7 +22,8 @@ var loverBuilder = function(type ,cb) {
     lovers.shootDistance = 210 + 150 * Math.random()
 
     lovers.direction = spriteTool.makeIdentity(cf.direction)
-    lovers.speed = 10
+    lovers.speed = 10 + stage.lg * 0.1
+    console.log(lovers.speed)
 
     lovers.dscale = 0.5 * lovers.speed / 5000
 

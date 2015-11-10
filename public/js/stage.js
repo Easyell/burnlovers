@@ -52,7 +52,7 @@ function rate (count) {
     if (count > 200 * 0.99) {
         return 99 + '%'
     } else {
-        return count / 400 + '%'
+        return count / 200 * 100 + '%'
     }
 }
 
@@ -87,6 +87,7 @@ stage.init = function() {
     stage.interactive = true
     stage.loversArr = []
     stage.timer = 0
+    stage.lg = 0 //lover group count
     this.visible = true
     this.burnCount = 0
     this.progress = 0
@@ -135,6 +136,7 @@ stage.render = function() {
     if(stage.timer % 120 == 0) {
         var r = parseInt(Math.random() * 7)
         randomLovers[r](stage)
+        stage.lg ++
     }
     stage.timer ++
     stage.children.forEach((function(child){
