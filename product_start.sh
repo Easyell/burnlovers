@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-NODE_ENV=product node bin/www
+NODE_ENV=product pm2 restart bin/www
