@@ -4,6 +4,7 @@
 var sprite = require('./sprites/sprite');
 var R = require('./resource')
 var stage = new PIXI.Container();
+var htmlTitle =document.querySelector('title');
 
 var generateLovers = function(stage, x) {
     var lovers = require('./sprites/lovers')(x)
@@ -65,9 +66,11 @@ stage.showEndMask = function() {
         'width':640,
         'height':1004
     });
-    var text = new PIXI.Text(rate(stage.burnCount),{font : '50px Arial', fill : 0x000000, align : 'center'});
+    var textStr = rate(stage.burnCount);
+    var text = new PIXI.Text(textStr,{font : '50px Arial', fill : 0x000000, align : 'center'});
     text.x = 360
     text.y = 340
+
     var backButton = sprite.getIm({
         img: R.backButton,
         'anchor.set': [0.5, 0.5],

@@ -20,6 +20,7 @@ if(r){
 document.body.appendChild(renderer.view);
 var audio = document.getElementById('audio')
 audio.loop = true
+
 var stage = require('./stage');
 var startStage = require('./startStage')
 var mainStage = new PIXI.Container()
